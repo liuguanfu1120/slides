@@ -4,31 +4,571 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>What is the IMF of LRNAs in intermediate- and high-mass regime?</title>
+
+		<meta name="description" content="Group meeting on Jan. 16, 2024">
+		<meta name="author" content="Guan-Fu Liu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<link rel="stylesheet" href="../dist/reset.css">
 		<link rel="stylesheet" href="../dist/reveal.css">
-		<link rel="stylesheet" href="../dist/theme/serif.css">
+		<link rel="stylesheet" href="../dist/theme/black-gxf.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+		<style>
+		.footnotes {
+			position: absolute;
+			bottom: -5.5em;
+			left: 0;
+			line-height: 0.1em;
+			font-size: 0.8em; /* Smaller font size for footnotes */
+			width: 100%; /* Ensure it spans the width of the slide */
+			padding: 2px; /* Padding for aesthetic spacing */
+			text-align: left
+			/* background: rgba(255, 255, 255, 0.7); Optional: background for readability */
+		}
+		.grid-container-2eq {
+			/* Two columns of equal size with the gap of 20 pixels */
+					display: grid;
+					grid-template-columns: 1fr 1fr; /* Example sizes */
+					grid-gap: 20px; /* Space between columns */
+				}
+		.reveal ul {
+			text-align: left;
+			display: inline-block;
+			margin-left: 0;
+		}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-				<section><h2>Slide 3</h2></section>
+				<section data-background-image="./background/mrk1216_optical.jpg" 
+					data-background-size="100%">
+					<h1>What is the IMF of LRNAs in intermediate- and high-mass regime?</h1>
+
+					<h2>Constraints from X-ray observations</h2>
+
+					<br>
+					<p>Guan-Fu Liu</p>
+					<p>2024.01.16</p>
+				</section>
+
 				<section>
-					<h1>The Lorenz Equations</h1>
-					\[\begin{aligned}
-					\dot{x} &amp; = \sigma(y-x) \\
-					\dot{y} &amp; = \rho x - y - xz \\
-					\dot{z} &amp; = -\beta z + xy
-					\end{aligned} \]
-				  </section>
+				<h1>Table of contents</h1>
+				<ul>
+				<h2>1. Introduction</h2>
+				<h2>2. Methodology</h2>
+				<h2>3. X-ray observations</h2>
+				<h2>4. Primary results</h2>
+				</ul>
+				</section>
+
+<!-- Introduction Part -->
+				<section>
+				<section>
+				<h1>Introduction</h1>
+				<ul>
+				<h2>1. What is the initial mass function (IMF)?</h2>
+				<h2>2. Three most popular IMFs of the local Universe</h2>
+				<h2>3. Why the intermediate- and high-mass regime?</h2>
+				<h2>4. What are local red nugget analogs (LRNAs)?</h2>
+				<h2>5. How does the LRNAs form?</h2>
+				</ul>
+				</section>
+				<section>
+					<h1>What is the initial mass function (IMF)?</h1>
+					<h2>Definition:</h2>
+					<blockquote>
+						<p>The initial mass function is the relative number of stars, as a function of 
+							their individual initial mass, that forms during a single star forming episode.
+							<sup><a href="#CarigiL2011">[1]</a></sup></p>
+					</blockquote>
+					<p>$$
+					\small
+					\xi(m) \equiv \frac{dN}{dm}
+					$$</p>
+	
+					<div class="grid-container-2eq">
+					<div class="column1">
+					<p>IMF is fundamental to getting a better 
+						understanding of</p>
+					<ul>
+						<li>Star formation</li>
+						<li>Chemical enrichment</li>
+						<li>Stellar evolution</li>
+						<li>Stellar feedback</li>
+						<li>...</li>
+					</ul>
+					</div>
+					<div class="column2">
+					<p>Is IMF universal?</p>
+					<br>
+					<ul>
+						<li>universal IMF: same IMF for different environments</li>
+						<li>No convincing evidence for non-universal IMF from the observations of the local Universe</li>
+					</ul>
+					</div>
+					</div>
+					<div class="footnotes">
+						<p id="#CarigiL2011">[1]: <a href="https://doi.org/10.1007/978-3-642-11274-4_790">Carigi, L. (2011)</a></p>
+					</div>
+				<style>
+					.reveal h2 {
+ 						text-align: left;
+					}
+				</style>
+				</section>
+
+				<section>
+					<h1>Three most popular IMFs of the local Universe</h1>
+					<div class="grid-container-2eq">
+						<div class="column1">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig1.png" alt="Fig1" style="display: block; margin: 0 auto; width: 120%; height: auto;">
+								<figcaption>
+							  
+								</figcaption>
+							  </figure>
+						</div>
+						<div class="column2">
+							<ul>
+								<li>
+									Salpeter IMF: single power law
+									<sup><a href="#Salpeter1955">[1]</a></sup> 
+									<br>
+									<p>
+										$$\xi(m) \propto m^{-2.35}, m \in [0.1, 100]~ M_{\odot}$$
+									</p>
+								</li>
+							
+								<li>
+									Chabrier IMF: one power law + LogNorm in low mass end<sup><a href="#Chabrier2003">[2]</a></sup>
+									<br>
+										<p>$$
+										\begin{aligned}
+										\xi(m) &\propto \frac{\ln 10}{m}\exp\left(-\frac{(\ln m - \ln 0.08)^{2}}{2\times 0.69^{2}} \right) , m\in (0.08,1]~M_{\odot} \\
+										\xi(m) &\propto m^{-2.3}, m > 1~ M_{\odot}
+										\end{aligned}
+										$$</p>
+								</li>
+							
+								<li>
+									Kroupa IMF: piecewise power law<sup><a href="#Kroupa2001">[3]</a></sup>
+									<br>
+									<p>
+										$$\begin{aligned}
+										& \xi(m) \propto m^{-0.3}, m \in(0,0.08]~M_{\odot} \\
+										& \xi(m) \propto m^{-1.3}, m \in(0.08,0.5)~M_{\odot} \\
+										& \xi(m) \propto m^{-2.3}, m \in[0.5,120]~ M_{\odot}
+										\end{aligned}$$
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="footnotes">
+							<p id="#Salpeter1955">[1]: <a href="https://ui.adsabs.harvard.edu/abs/1955ApJ...121..161S">
+								Salpter (1955)</a></p>
+							<p id="#Chabrier2003">[2]: <a href="http://iopscience.iop.org/article/10.1086/376392">
+								Chabrier (2003)</a></p>
+							<p id="#Kroupa2001">[3]: <a href="https://ui.adsabs.harvard.edu/abs/2001MNRAS.322..231K">
+								Kroupa (2001)</a></p>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>Why the intermediate- and high-mass regime?</h1>
+					<h2>Intermediate- and high-mass stars:</h2>
+					<ul>
+						<li> Mass range: $M\gtrsim 2 M_{\odot}$ </li>
+						<li> Main sequence time 
+							$t_{\mathrm{MS}}\approx t_{\odot}(M/M_{\odot})^{-2.5}\lesssim 1.77~\mathrm{Gyr}$</li>
+						<li> IMF can be described by a simple power law</li>
+					</ul>
+					<figure style="text-align: center;">
+					<img src="./slides-fig/Fig2.png" alt="Fig2" style="display: block; margin: 0 auto; width: 80%; height: auto;">
+					<figcaption>
+
+					Figure 2 in Karakas & Lattanzio (2014)<sup><a href="#Karakas2014">[1]</a></sup>
+
+					</figcaption>
+					</figure>
+
+					<div class="footnotes">
+						<p id="#Karakas2014">[1]: <a href="https://ui.adsabs.harvard.edu/abs/2014PASA...31...30K">
+							Karakas & Lattanzio (2014)</a></p>
+					</div>
+
+					<style>
+						.reveal section ul {
+							text-align: left !important;
+							display: inline-block !important;
+							margin-left: 0 !important;
+							margin-right: auto !important;
+						}
+					</style>
+				</section>
+
+				<section>
+					<h1>What are local red nugget analogs (LRNAs)?</h1>
+					<ul>
+					<li>Red Nuggets: massive, compact, quiescent, ellipticals, z~2</li>
+					<li>Local red nugget analogs: the local (z<0.1) analogs of red nuggets</li>
+					</ul>
+					<div class="grid-container-2eq">
+						<div class="column1">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig3.png" alt="Fig3" style="display: block; margin: 0 auto; width: 120%; height: auto;">
+								<figcaption>
+							  							  
+							   An LRNA: MRK 1216<sup><a href="#NASA-MRK1216">[1]</a></sup>
+							  							  
+								</figcaption>
+							  </figure>
+						</div>
+						<div class="column2">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig4.png" alt="Fig4" style="display: block; margin: 0 auto; width: 60%; height: auto;">
+								<figcaption>
+							  
+							   Stellar mass–size relation of 3 LRNAs and 13 candidates. Follow the relation of ellipticals at z~2 
+							   <sup><a href="#Yıldırım2017">[2]</a></sup>
+							  
+								</figcaption>
+							  </figure>
+						</div>
+						<div class="footnotes">
+							<p id="#NASA-MRK1216">[1]: <a href="https://chandra.harvard.edu/photo/2019/mrk1216/">
+								NASA's Chandra X-ray Observatory</a></p>
+								<p id="#Yıldırım2017">[2]: <a href="https://academic.oup.com/mnras/article-lookup/doi/10.1093/mnras/stx732">
+									Yıldırım et al. (2017)</a></p>
+						</div>
+					</div>					
+				</section>
+				
+				<section>
+
+					<h1> How does the LRNAs form?</h1>
+					<br>
+					<figure style="text-align: center;">
+					<img src="./slides-fig/Fig5.png" alt="Fig5" style="display: block; margin: 0 auto; width: 120%; height: auto;">
+					<figcaption>
+
+					</figcaption>
+					</figure>
+					<ul>
+					<li>The IMF is exactly the IMF of red nuggets.</li>
+					<li>The information of stars with $M\lesssim 2 M_{\odot}$ is contained in the hot gas.</li>
+					<li>X-ray observations matter!</li>
+					</ul>
+				</section>
+			</section>
+<!-- Methodology Part -->
+				<section>
+					<h1>Methodology</h1>
+					<p>
+					$$
+					\frac{Z_{i}}{Z_{j}} = \frac{\int_{m_{\mathrm{low}}}^{m_{\mathrm{up}}}\xi(m)Y_{i}(m)\mathrm{d}m}{\int_{m_{\mathrm{low}}}^{m_{\mathrm{up}}}\xi(m)Y_{j}(m)\mathrm{d}m}
+					$$
+					</p>
+					<figure style="text-align: center;">
+					  <img src="./slides-fig/Fig6.png" alt="Fig6" style="display: block; margin: 0 auto; width: 80%; height: auto;">
+					  <figcaption>		
+					  </figcaption>
+					</figure>
+				</section>
+<!-- Observation Part -->
+				<section>
+					<section>
+						<h1>X-ray observations</h1>
+						<ul>
+							<h2>1. Source selection</h2>
+							<h2>2. High-resolution X-ray spectra of MRK 1216</h2>
+							<h2>3. Model selection criterion</h2>
+							<h2>4. Model selection results</h2>
+							<h2>5. Fitting results</h2>							
+						</ul>
+					</section>
+					<section>
+						<h1>Source selection</h1>
+						There are three confirmed LRNAs up to now: NGC 1277, MRK 1216, and PGC 032873.
+
+						But:
+						<ul>
+							<li>NGC 1277: locates in Perseus cluster</li>
+							<li>PGC 032873: much fainter than MRK 1216</li>
+						</ul>
+
+
+						<figure style="text-align: center;">
+						<img src="./slides-fig/Fig7.png" alt="Fig7" style="display: block; margin: 0 auto; width: 120%; height: auto;">
+						<figcaption>
+
+						Table 1 from Buote & Barth (2019) <sup><a href="#Buote2019">[1]</a></sup>
+
+						</figcaption>
+						</figure>
+						Now, we focus on <strong>MRK 1216</strong>.
+						<div class="footnotes">
+							<p id="#Buote2019">[1]: <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab1008">
+								Buote & Barth (2019)</a></p>
+						</div>
+					</section>
+
+					<section>
+						<h1>High-resolution X-ray spectra of MRK 1216</h1>
+						<div class="grid-container-2eq">
+						<div class="column1">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig8.png" alt="Fig8" style="display: block; margin: 0 auto; width: 80%; height: auto;">
+								<figcaption>
+							   XMM-Newton observation of MRK 1216
+								</figcaption>
+							  </figure>
+							  <br>
+							  How to deal with these two observations?
+							  <ul>
+								<li>Fit the two observations separately</li>
+							  	<li>Combine these two and fit the combined observation</li>
+							  	<li>Fit these two observations simultaneously<sup><a href="#JointFitting">[1]</a></sup></li>
+							</ul>
+						</div>
+						<div class="column2">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig9.png" alt="Fig9" style="display: block; margin: 0 auto; width: 120%; height: auto;">
+								<figcaption>
+							  
+							  2 CIE: double-temperature model.
+							  <br>
+							  Combined: a combination of two observations.
+								</figcaption>
+							  </figure>
+						</div>
+					</div>
+					<div class="footnotes">
+						<p id="#JointFitting">[1]: <a href="https://spex-xray.github.io/spex-help/threads/twospec/twospec.html">
+							Joint Fitting</a></p>
+					</div>
+					</section>
+					<section>
+						<h1>Model selection criterion</h1>
+						We can fit the observations with different models, 
+						but which one is the best? We need AIC criterion.
+						<sup><a href="#Akaike19749">[1]</a></sup><sup><a href="#Sugiura197">[2]</a></sup>
+						$$
+						\small
+						\mathrm{AIC}_{c} \equiv -2\ln \left( L^{0}(M) \right) + 2k + \frac{2k(k+1)}{N-k-1}
+							= \mathrm{AIC}+\frac{2k(k+1)}{N-k-1} 
+						$$
+
+						The last two terms is <strong> penalty terms</strong> for the number of free parameters.
+						<br>
+						$\mathrm{AIC}_{c}$: the smaller, the better.
+						
+						$$
+						\small
+						\Delta \mathrm{AIC}_{c} = \mathrm{AIC}_{c} - \mathrm{AIC}_{c,\mathrm{min}}
+						$$
+						<div class="grid-container-2eq">
+
+						<div class="column1">
+							For C-statistic<sup><a href="#Arnaud1996">[3]</a></sup>:
+							$$
+							\small
+								C = 2\sum_{i}(M_{i}-D_{i}\ln M_{i}+D_{i}\ln D_{i} - D_{i})
+							$$
+
+							$$
+							\small
+							-2\ln \left( L^{0}(M) \right) = C
+							$$
+						</div>
+						<div class="column2">
+							<body>
+								<table>
+									<thead>
+										<tr>
+											<th>$$\Delta \mathrm{AIC}$$</th>
+											<th>Level of Empirical Support</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>0-2</td>
+											<td>Substantial</td>
+										</tr>
+										<tr>
+											<td>4-7</td>
+											<td>Considerably less</td>
+										</tr>
+										<tr>
+											<td>&gt;10</td>
+											<td>Essentially none</td>
+										</tr>
+									</tbody>
+								</table>
+							</body>
+													
+						</div>
+
+						<div class="footnotes">
+							<p id="#Akaike1974">[1]: <a href="https://doi.org/10.1109/TAC.1974.1100705">
+								Akaike (1974)</a></p>
+							<p id="#Sugiura1978">[2]: <a href="https://www.tandfonline.com/doi/full/10.1080/03610927808827599">
+								Sugiura (1978)</a></p>
+							<p id="#Arnaud1996">[2]: <a href="https://ui.adsabs.harvard.edu/abs/1996ASPC..101...17A/abstract">
+								Arnaud (1996)</a></p>							
+						</div>
+
+					</div>
+					</section>
+
+					<section>
+						<h1>Model selection results</h1>
+						<div class="grid-container-2eq">
+						<div class="column1">
+							$\Delta \mathrm{AIC}_{c}$:
+							<table>
+								<thead>
+									<tr>
+										<th>Fitting strategy</th>
+										<th>1CIE</th>
+										<th>2CIE</th>
+										<th>Multi-T</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>0822960101</td>
+										<td>0.6</td>
+										<td>2.0</td>
+										<td>0.0</td>
+									</tr>
+									<tr>
+										<td>0822960201</td>
+										<td>6.8</td>
+										<td>0.0</td>
+										<td>0.2</td>
+									</tr>
+									<tr>
+										<td>Combined</td>
+										<td>11.2</td>
+										<td>0.5</td>
+										<td>0.0</td>
+									</tr>
+									<tr>
+										<td>Joint</td>
+										<td>9.0</td>
+										<td>1.4</td>
+										<td>0.0</td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+						<div class="column2">
+							<p>From the table on the left:</p>
+							<ul>
+								<li>The multi-T model is the best overall.</li>
+								<li>he single-temperature model (1CIE) is not good.</li>
+							</ul>
+
+							<br>
+
+							The structure of the hot gas may be <strong>complex</strong> than that 
+							a simple single-temperature model can describe.
+						</div>
+					</div>	
+					</section>
+
+					<section>
+						<h1>Fitting results</h1>
+						<div class="grid-container-2eq">
+						<div class="column1">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig10.png" alt="Fig10" style="display: block; margin: 0 auto; width: 90%; height: auto;">
+								<figcaption>
+							  
+							  
+								</figcaption>
+							  </figure>
+						</div>
+						<div class="column2">
+							Which abundance to use?
+							<ul>
+							<li>Ni: large error bar, stellar yields are sensitive to SNIa models</li>
+							<li>Fe: stellar yields are sensitive to SNIa models</li>
+							<li>Mg: large error bar, result from two single observations are not consistent</li>
+							</ul>
+							Use the abundance of <strong> O </strong>and <strong> Ne </strong>.
+						</div>
+					</div>
+					</section>
+				</section>
+<!-- Results Part -->
+				<section>
+					<section>
+						<h1>Primary results</h1>
+						We adopt a simple power law IMF, which reads 
+						$$
+						\xi(m) \propto m^{-\Gamma-1}
+						$$
+
+						Some hints on a much <strong>steeper</strong> IMF ($\Gamma > 1.35$) in the intermediate- 
+						and high-mass regime:	
+						<div class="grid-container-2eq">
+						<div class="column1">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig11.png" alt="Fig11" style="display: block; margin: 0 auto; width: 80%; height: auto;">
+								<figcaption>
+							  
+								</figcaption>
+							  </figure>
+						</div>
+						<div class="column2">
+							<figure style="text-align: center;">
+								<img src="./slides-fig/Fig11.png" alt="Fig11" style="display: block; margin: 0 auto; width: 80%; height: auto;">
+								<figcaption>
+							  
+								</figcaption>
+							  </figure>
+						</div>
+					</div>
+					</section>
+
+					<section>
+						<h1>Why a steeper IMF?</h1>
+
+						It is a two-fold question:
+						<br>
+						<ul>
+							<li>Is it true? More check to be done. Different stellar yields should be tested.</li>
+							<li>If it is true, photoionization feedback can play a role. </li>
+						</ul>
+					</section>
+				</section>
+<!-- Summary Part -->
+				<section>
+					<h1>Summary</h1>
+					<ul>
+						<li>IMF is one of the fundamental ingredient in galatic physics </li>
+						<li>X-ray observation is crucial for putting constraints on IMF in intermediate- and high-mass regime </li>
+						<li>The IMF of LRNAs is exactly the IMF of their progenitors at z~2</li>
+						<li>There is a hint of a steeper IMF in the intermediate- and high-mass regime</li>
+					</ul>
+				</section>
+<!-- Thanks Part -->
+				<section>
+					<h1> THANKS!</h1>
+				</section>
 			</div>
+		
 		</div>
+
 		<script src="../plugin/math/math.js"></script>
 		<script src="../dist/reveal.js"></script>
 		<script src="../plugin/notes/notes.js"></script>
@@ -39,34 +579,47 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				// The "normal" size of the presentation, aspect ratio will
+				// be preserved when the presentation is scaled to fit different
+				// resolutions. Can be specified using percentage units.
+				width: 1600,
+				height: 900,
+
+				// Factor of the display size that should remain empty around
+				// the content
+				margin: 0.04,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 2.0,
 				hash: true,
 				slideNumber: 'c/t',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
-				dependencies: [ { src: '../plugin/tableofcontents/tableofcontents.js' }],
+				// dependencies: [ { src: '../plugin/tableofcontents/tableofcontents.js' }],
 
-				tableofcontents: {
-				// Specifies the slide title of the table of contents slide
-				title: "Table of Contents",
+				// tableofcontents: {
+				// // Specifies the slide title of the table of contents slide
+				// title: "Table of Contents",
 
-				// Specifies the position of the table of contents slide in the presentation
-				position: 2,
+				// // Specifies the position of the table of contents slide in the presentation
+				// position: 2,
 
-				// Specifies html tag in which the table of contents title stands
-				titleTag: "h2",
+				// // Specifies html tag in which the table of contents title stands
+				// titleTag: "h2",
 
-				// Specifies which slide tag elements will be used
-				// for generating the table of contents.
-				titleTagSelector: "h1, h2, h3, h4, h5, h6",
+				// // Specifies which slide tag elements will be used
+				// // for generating the table of contents.
+				// titleTagSelector: "h1, h2, h3, h4, h5, h6",
 
-				// Specifies if the first slide, mostly the title slide of the presentation, 
-				// should be ignored.
-				ignoreFirstSlide: false,
+				// // Specifies if the first slide, mostly the title slide of the presentation, 
+				// // should be ignored.
+				// ignoreFirstSlide: false,
 
-				// Specifies if every single element of the table of contents
-				// will be stepped through before moving on to the next slide.
-				fadeInElements: false
-				},
+				// // Specifies if every single element of the table of contents
+				// // will be stepped through before moving on to the next slide.
+				// fadeInElements: false
+				// },
 			});
 		</script>
 	</body>

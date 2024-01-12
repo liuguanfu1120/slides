@@ -16,6 +16,12 @@
         h1 {
             color: #4A90E2;
         }
+		.introduction {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1em;
+            color: #555;
+        }
         .presentation-list {
             list-style-type: none;
             padding: 0;
@@ -52,20 +58,38 @@
     </style>
 </head>
 <body>
-    <h1>My Presentations</h1>
+    <h1>Guan-Fu Liu's Presentation(s)</h1>
+	<div class="introduction">
+        <p>Welcome to my presentations page! Here, I've compiled a collection of my talks, lectures, and presentations 
+			on various topics. 
+			Please feel free to use and share these presentations as long as they are not used for commercial purposes. 
+			I hope they serve as valuable resources for learning and inspiration.
+			</p>
+    </div>
     <ul class="presentation-list">
         <li>
-            <a class="presentation-link" href="/pro/index.html">
+            <a class="presentation-link" href="/slides/IMF-24-01-16/index.html">
+			<!-- Please replace the "slides" in the last row with your GitHub repository!!!  -->
                 <h2 class="presentation-title">Presentation 1</h2>
             </a>
-            <p class="presentation-description">A brief description of what Presentation 1 is about.</p>
+            <p class="presentation-info">Type: Group Meeting</p>
+            <p class="presentation-info">Date: 2024.01.16</p>
+            <p class="presentation-info">Keywords: IMF, LRNAs, X-ray</p>
+            <p class="presentation-description">
+				There is a brief introduction to the initial mass function (IMF), local red nuggets (LRNAs), and
+				model selection when SPEX fitting is implemented.
+				Some primary result of the constraints on LRANs's IMF
+				could be found in this presentation.</p>
         </li>
-        <li>
+        <!-- <li>
             <a class="presentation-link" href="/presentation2/index.html">
                 <h2 class="presentation-title">Presentation 2</h2>
             </a>
-            <p class="presentation-description">An overview of Presentation 2's main topics and themes.</p>
-        </li>
+            <p class="presentation-info">Type: Seminar</p>
+            <p class="presentation-info">Date: 2024.01.20</p>
+            <p class="presentation-description">Overview of Presentation 2, 
+				highlighting its key themes and audience engagement strategies.</p>
+        </li> -->
         <!-- Add more presentations as needed -->
     </ul>
 </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="path/to/reveal.js/css/reveal.css">
+    <style>
+        .footnotes {
+            font-size: 0.75em;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Slide Title</h2>
+                <p>This is some content with a footnote reference<sup id="fnref1">[1]</sup>.</p>
+                <div class="footnotes">
+                    <p id="fn1">[1] This is the footnote content. <a href="#fnref1"></a></p>
+                </div>
+            </section>
+            <!-- More slides -->
+        </div>
+    </div>
+
+    <script src="path/to/reveal.js/js/reveal.js"></script>
+    <script>
+        Reveal.initialize();
+    </script>
+</body>
+</html>
