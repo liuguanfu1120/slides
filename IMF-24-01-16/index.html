@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/serif.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1</section>
+				<section>Slide 2</section>
+				<section><h2>Slide 3</h2></section>
+				<section>
+					<h1>The Lorenz Equations</h1>
+					\[\begin{aligned}
+					\dot{x} &amp; = \sigma(y-x) \\
+					\dot{y} &amp; = \rho x - y - xz \\
+					\dot{z} &amp; = -\beta z + xy
+					\end{aligned} \]
+				  </section>
+			</div>
+		</div>
+		<script src="../plugin/math/math.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+				dependencies: [ { src: '../plugin/tableofcontents/tableofcontents.js' }],
+
+				tableofcontents: {
+				// Specifies the slide title of the table of contents slide
+				title: "Table of Contents",
+
+				// Specifies the position of the table of contents slide in the presentation
+				position: 2,
+
+				// Specifies html tag in which the table of contents title stands
+				titleTag: "h2",
+
+				// Specifies which slide tag elements will be used
+				// for generating the table of contents.
+				titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+				// Specifies if the first slide, mostly the title slide of the presentation, 
+				// should be ignored.
+				ignoreFirstSlide: false,
+
+				// Specifies if every single element of the table of contents
+				// will be stepped through before moving on to the next slide.
+				fadeInElements: false
+				},
+			});
+		</script>
+	</body>
+</html>
