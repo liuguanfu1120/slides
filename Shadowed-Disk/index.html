@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>What is the IMF of LRNAs in intermediate- and high-mass regime?</title>
+
+		<meta name="description" content="Group meeting on Jan. 16, 2024">
+		<meta name="author" content="Guan-Fu Liu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black-gxf.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+		<style>
+		.footnotes {
+			position: absolute;
+			bottom: -5.5em;
+			left: 0;
+			line-height: 0.1em;
+			font-size: 0.8em; /* Smaller font size for footnotes */
+			width: 100%; /* Ensure it spans the width of the slide */
+			padding: 2px; /* Padding for aesthetic spacing */
+			text-align: left
+			/* background: rgba(255, 255, 255, 0.7); Optional: background for readability */
+		}
+		.grid-container-2eq {
+			/* Two columns of equal size with the gap of 20 pixels */
+					display: grid;
+					grid-template-columns: 1fr 1fr; /* Example sizes */
+					grid-gap: 20px; /* Space between columns */
+				}
+		.reveal ul {
+			text-align: left;
+			display: inline-block;
+			margin-left: 0;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<!-- Title slide -->
+				<section data-background-image="./Shadowed-Disk-fig/protoplantery-disk.png" 
+					data-background-size="100%">
+					<h1>Shadowed Protoplanetary Disk</h1>
+
+					<h2>1D simulation in z-direction</h2>
+
+					<br>
+					<p>Guan-Fu Liu</p>
+					<p>2024.01.22</p>
+				</section>
+<!-- Pure 1D simulation -->
+				<section>
+					<h1> Pure 1D simulation</h1>
+					<h2>Proress</h2>
+					<ul>
+						<li>Fix some bugs in the code</li>
+						
+
+					</ul>
+
+					<code>11</code>
+
+				</section>
+			</div>
+		
+		</div>
+
+		<script src="../plugin/math/math.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				// The "normal" size of the presentation, aspect ratio will
+				// be preserved when the presentation is scaled to fit different
+				// resolutions. Can be specified using percentage units.
+				width: 1600,
+				height: 900,
+
+				// Factor of the display size that should remain empty around
+				// the content
+				margin: 0.04,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 2.0,
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+				// dependencies: [ { src: '../plugin/tableofcontents/tableofcontents.js' }],
+
+				// tableofcontents: {
+				// // Specifies the slide title of the table of contents slide
+				// title: "Table of Contents",
+
+				// // Specifies the position of the table of contents slide in the presentation
+				// position: 2,
+
+				// // Specifies html tag in which the table of contents title stands
+				// titleTag: "h2",
+
+				// // Specifies which slide tag elements will be used
+				// // for generating the table of contents.
+				// titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+				// // Specifies if the first slide, mostly the title slide of the presentation, 
+				// // should be ignored.
+				// ignoreFirstSlide: false,
+
+				// // Specifies if every single element of the table of contents
+				// // will be stepped through before moving on to the next slide.
+				// fadeInElements: false
+				// },
+			});
+		</script>
+	</body>
+</html>

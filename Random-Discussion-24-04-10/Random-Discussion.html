@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>What should we discuss in this type of meeting?</title>
+
+		<meta name="description" content="Type II Group Meeting on Apr. 10, 2024">
+		<meta name="author" content="Guan-Fu Liu">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black-gxf.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+		<style>
+		.footnotes {
+			position: absolute;
+			bottom: -5.5em;
+			left: 0;
+			line-height: 0.1em;
+			font-size: 0.8em; /* Smaller font size for footnotes */
+			width: 100%; /* Ensure it spans the width of the slide */
+			padding: 2px; /* Padding for aesthetic spacing */
+			text-align: left
+			/* background: rgba(255, 255, 255, 0.7); Optional: background for readability */
+		}
+		.grid-container-2eq {
+			/* Two columns of equal size with the gap of 20 pixels */
+					display: grid;
+					grid-template-columns: 1fr 1fr; /* Example sizes */
+					grid-gap: 20px; /* Space between columns */
+				}
+		.reveal ul {
+			text-align: left;
+			display: inline-block;
+			margin-left: 0;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<!-- Title slide -->
+				<section data-background-image="./Random-Discussion-fig/Discussion.png" 
+					data-background-size="cover">
+					<h1 style="color: palevioletred;">What should we discuss in this type of meeting?</h1>
+
+					<h2> </h2>
+
+					<br>
+					<p>Guan-Fu Liu</p>
+					<p>2024.04.10</p>
+				</section>
+<!-- Table of Contents -->
+				<section>
+					<h1>Table of contents</h1>
+					<ul>
+					<h2>1. Paper reading</h2>
+					<h2>2. Useful knowledge</h2>
+					<h2>3. Useful tips/code</h2>
+					<h2>4. Trouble shooting</h2>
+					<h2>5. Brainstorming</h2>
+					<h2>6. Others</h2>
+					</ul>
+				</section>
+<!-- Paper reading -->
+				<section>
+					<h1>Paper reading</h1>
+					<h2>Just a brief summary of a paper is OK.</h2>
+				</section>
+<!-- Useful knowledge -->
+				<section>
+					<h1>Useful knowledge</h1>
+					<h2>A simple example</h2>
+					<ul>
+						<li> <a href="https://liuguanfu1120.github.io/blog/Notes/X-ray-Observations/Why-LogNorm.html">Why use log
+							normal distribution to fit X-ray observations?</a> </li>
+						</a> </li>
+					</ul>
+				</section>
+<!-- Useful tips/code -->
+				<section>
+					<h1>Useful tips/code: a simple example</h1>
+					<h2>I have finished a series of codes for mocking a high-resolution X-ray spectrum</h2>
+				</section>
+<!-- Trouble shooting -->
+				<section>
+					<h1>Trouble shooting</h1>
+					<h2>If you have any problem, please explain it and ask for help.</h2>
+					<h2>It would be much better if you could make a demo to reproduce it.</h2>
+					<ul>
+						<li>A bug of SPEX of older version: <a href="https://spex-xray.github.io/spex-help/changelog.html">
+							SPEX Changelog</a></li>
+						<li>A bug of Sherpa</li>
+					</ul>
+				</section>
+<!-- Brainstorming -->
+				<section>
+					<h1>Brainstorming</h1>
+					<h2>Just share you ideas.</h2>
+				</section>
+<!-- Others -->
+				<section>
+					<h1>Others</h1>
+					<h2>Anything else you want to share.</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="../plugin/math/math.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				// The "normal" size of the presentation, aspect ratio will
+				// be preserved when the presentation is scaled to fit different
+				// resolutions. Can be specified using percentage units.
+				width: 1920,
+				height: 1080,
+
+				// Factor of the display size that should remain empty around
+				// the content
+				margin: 0.04,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 2.0,
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+				// dependencies: [ { src: '../plugin/tableofcontents/tableofcontents.js' }],
+
+				// tableofcontents: {
+				// // Specifies the slide title of the table of contents slide
+				// title: "Table of Contents",
+
+				// // Specifies the position of the table of contents slide in the presentation
+				// position: 2,
+
+				// // Specifies html tag in which the table of contents title stands
+				// titleTag: "h2",
+
+				// // Specifies which slide tag elements will be used
+				// // for generating the table of contents.
+				// titleTagSelector: "h1, h2, h3, h4, h5, h6",
+
+				// // Specifies if the first slide, mostly the title slide of the presentation, 
+				// // should be ignored.
+				// ignoreFirstSlide: false,
+
+				// // Specifies if every single element of the table of contents
+				// // will be stepped through before moving on to the next slide.
+				// fadeInElements: false
+				// },
+			});
+		</script>
+	</body>
+</html>
